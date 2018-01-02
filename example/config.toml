@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Sapling Example"
+themesDir = "../../"
+theme = "sapling"
+pluralizeListTitles = false
+pygmentsCodeFences = true
+pygmentsStyle = "friendly"
+
+[permalinks]
+"" = "/:slug/"
+section-one = "/:sections/:slug/"
+section-two = "/:sections/:slug/"
+section-three = "/:sections/:slug/"

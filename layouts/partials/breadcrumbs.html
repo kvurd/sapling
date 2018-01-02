@@ -1,0 +1,18 @@
+<ol class="breadcrumbs">
+  {{template "breadcrumb" (dict "currentPage" . "isLastBreadcrumb" true) }}
+</ol>
+
+{{ define "breadcrumb" }}
+  {{ if .currentPage }}
+    {{template "breadcrumb" (dict "currentPage" .currentPage.Parent "isLastBreadcrumb" false) }}
+    <li>
+      {{ if .isLastBreadcrumb }}
+        {{ .currentPage.Title }}
+      {{ else if .currentPage.IsHome }}
+        <a href="{{ .currentPage.Permalink }}{{ if .currentPage.Site.Params.uglyURLs }}index.html{{ end }}">Home</a>
+      {{ else }}
+        <a href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a>
+      {{ end }}
+    </li>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,43 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 1em auto;
+  max-width: 50rem;
+  line-height: 1.5;
+  padding: 0 1rem;
+  font-family: sans-serif;
+}
+
+ol.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  opacity: 50%;
+}
+ol.breadcrumbs li {
+  display: inline;
+}
+ol.breadcrumbs li+li:before {
+  padding: 0.5rem;
+  color: black;
+  content: ">";
+}
+
+.contents ol {
+  list-style: none;
+}
+.contents > ol {
+  padding: 0;
+}
+
+code {
+  background: #f7f7f7;
+}
+pre code {
+  display: block;
+  overflow: auto;
+  padding: 1rem;
+  background: #f7f7f7;
+  line-height: 1.2;
+}

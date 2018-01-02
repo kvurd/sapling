@@ -1,0 +1,26 @@
+<div class="contents">
+  {{ template "contents" . }}
+</div>
+
+{{ define "contents" }}
+<ol>
+  {{/* Here we merge sections and pages together and then sort them
+    by title then weight. */}}
+
+  {{ $all := sort (sort (union .Sections .Pages) "Title") "Weight" }}
+  {{ $isHome := .IsHome }}
+  {{ range $all }}
+    {{ if eq .Kind "section" }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ template "contents" . }}
+      </li>
+    {{ else if eq .Kind "page" }}
+      {{/* The home page contains all site pages in its pages variable
+        so we need to narrow it down to just pages without a section */}}
+      {{ if or (and $isHome (eq "Section" "")) (not $isHome) }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</ol>
+{{ end }}

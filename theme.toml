@@ -1,0 +1,12 @@
+name = "sapling"
+license = "MIT"
+licenselink = "https://github.com/kvurd/sapling/blob/master/LICENSE.md"
+description = "A simple hugo theme for hierarchical content."
+homepage = "http://github.com/kvurd/sapling/"
+tags = ["simple", "minimal", "minimalist", "clean", "starter", "docs", "documentation"]
+features = []
+min_version = "0.31.1"
+
+[author]
+  name = "Karl Urdevics"
+  homepage = "https://kvurd.com"
